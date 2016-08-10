@@ -5,10 +5,9 @@
     <title>AppDirect Coding Challenge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="static/css/main.css" rel="stylesheet">
     <base href="/"/>
   </head>
-  <body>
+  <body ng-app="TweetExplorerApp">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -33,10 +32,20 @@
       </div>
     </nav>
 
+    <div class="row">
+      <div class="col-md-12">
+        <div ng-view> Loading...</div>
+      </div>
+    </div>
+
     <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="static/bower_components/angular/angular.min.js"></script>
     <script src="static/bower_components/angular-route/angular-route.min.js"></script>
+
+    <script src="static/js/app.js"></script>
+    <script src="static/js/controllers/tweets/tweet_dashboard_controller.js"></script>
+
   </body>
 </html>
 
