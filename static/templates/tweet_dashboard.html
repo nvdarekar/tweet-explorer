@@ -1,11 +1,35 @@
 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-Tweets from appDirect
+  <h2>Tweets from appDirect </h2>
+  <div class="panel panel-default" ng-repeat="x in tweets['column1']">
+    <div class="panel-body">
+      <p ng-bind="x.text"> </p>
+    </div>
+    <div class="panel-footer">
+      {{x.created_at}}
+    </div>
+  </div>
 </div>
 
 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-Tweets from LaunchSquid
+  <h2> Tweets from LaughingSquid </h2>
+  <div class="panel panel-default" ng-repeat="x in tweets['column2']">
+    <div class="panel-body">
+      <p ng-bind="x.text"> </p>
+    </div>
+    <div class="panel-footer">
+      {{x.created_at}}
+    </div>
+  </div>
 </div>
 
 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-Tweets from TechCrunch
+  <h2> Tweets from TechCrunch </h2>
+  <div class="panel panel-default" ng-repeat="x in tweets['column3']">
+    <div class="panel-body">
+      <p ng-bind="x.text"> </p>
+    </div>
+    <div class="panel-footer">
+      {{x.created_at}}
+    </div>
+  </div>
 </div>

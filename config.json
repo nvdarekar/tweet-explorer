@@ -1,8 +1,7 @@
 {
-  "consumerKey": "< paste your Twitter API key here >",
-  "consumerSecret": "<%- paste your Twitter Api Secret here %>",
+  "consumerKey": "KSVHEdPnak9FEf78P1GmTr00B",
+  "consumerSecret": "q3cIRx0KdBmHeSGiUQ50rp6aehSfjoCqkZCwqdrIT8gX3BRcr3",
   "accessToken": "",
   "accessTokenSecret": "",
   "port": "7890"
 }
-
