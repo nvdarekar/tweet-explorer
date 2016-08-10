@@ -7,6 +7,10 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl : "/static/templates/tweet_dashboard.html",
             controller  : "TweetDashboardController"
         })
+        .when("/settings", {
+            templateUrl : "/static/templates/settings.html",
+            controller  : "SettingsController"
+        })
         .otherwise({
             redirectTo: "/tweets"
         });

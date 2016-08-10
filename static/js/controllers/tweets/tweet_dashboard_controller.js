@@ -10,12 +10,12 @@ app.controller("TweetDashboardController",
         $scope.setTweetFeed = function(columnName, screenName, tweetCount){
             TwitterService.fetchTweets(screenName, tweetCount).then(function(data){
                 $scope.tweets[columnName] = data
+                console.log($scope.tweets[columnName].length);
             });
         }
-        $scope.init = function () {
-            $scope.setTweetFeed("column1", config.column1_name, config.column1_tweet_count)
-            $scope.setTweetFeed("column2", config.column2_name, config.column2_tweet_count)
-            $scope.setTweetFeed("column3", config.column3_name, config.column3_tweet_count)
-        }
-        $scope.init();
+        $scope.$watch('config', function() {
+            $scope.setTweetFeed("column1", config.column1_name, config.column1_tweet_count);
+            $scope.setTweetFeed("column2", config.column2_name, config.column2_tweet_count);
+            $scope.setTweetFeed("column3", config.column3_name, config.column3_tweet_count);
+        });
 });
