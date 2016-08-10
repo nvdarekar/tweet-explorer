@@ -5,10 +5,11 @@
     <title>AppDirect Coding Challenge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/main.css" rel="stylesheet">
     <base href="/"/>
   </head>
   <body ng-app="TweetExplorerApp">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default blue-background" >
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -21,7 +22,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active">
+            <li>
               <a href="/tweets">Dashboard</a>
             </li>
             <li>
@@ -42,11 +43,15 @@
     <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="static/bower_components/angular/angular.min.js"></script>
     <script src="static/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.12/angular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+
 
     <script src="static/js/app.js"></script>
     <script src="static/js/services/tweets/twitter_service.js"></script>
     <script src="static/js/controllers/tweets/tweet_dashboard_controller.js"></script>
     <script src="static/js/controllers/tweets/settings_controller.js"></script>
+
 
 
   </body>

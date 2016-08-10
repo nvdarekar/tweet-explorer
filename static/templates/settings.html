@@ -2,7 +2,17 @@
   <form role="form" id="settings-form" name="settingsForm" class="form-horizontal" ng-submit="saveSettings()">
 <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-      <h3> Column1 Settings </h3>
+        <div class="form-group">
+             <h3><label for="col1-user-name">Layout (No of Columns): </label> </h3>
+            <select id="col1-user-name" name="col1-user-name" class="form-control" ng-model="settings.no_of_columns"
+            ng-options="count for count in [1, 2, 3]">
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <h3> <label> Feed 1 Settings: </label> </h3>
         <div class="form-group">
             <label for="col1-user-name">User Name </label>
             <select id="col1-user-name" name="col1-user-name" class="form-control" ng-model="settings.column1_name"
@@ -17,7 +27,7 @@
         </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-      <h3> Column2 Settings </h3>
+      <h3> <label>  Feed 2 Settings: </label> </h3>
         <div class="form-group">
             <label for="col2-user-name">User Name </label>
             <select id="col2-user-name" name="col2-user-name" class="form-control" ng-model="settings.column2_name"
@@ -32,7 +42,7 @@
         </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-      <h3> Column3 Settings </h3>
+      <h3><label>  Feed 3 Settings: </label></h3>
         <div class="form-group">
             <label for="col3-user-name">User Name </label>
             <select id="col3-user-name" name="col3-user-name" class="form-control" ng-model="settings.column3_name"

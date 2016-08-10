@@ -1,0 +1,20 @@
+.panel {
+    word-wrap: break-word;
+}
+.panel-footer {
+    background-color: white;
+    border-top:none;
+}
+.username {
+    font-size: 13px;
+    color: #8899a6;
+}
+.user-title{
+    color: black;
+}
+.tweet-content {
+    margin-left:50px;
+}
+.blue-background {
+    background-color:#03a9f4;
+}

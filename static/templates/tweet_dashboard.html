@@ -1,35 +1,31 @@
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-  <h2>Tweets from AppDirect </h2>
-  <div class="panel panel-default" ng-repeat="x in tweets['column1']">
-    <div class="panel-body">
-      <p ng-bind="x.text"> </p>
-    </div>
-    <div class="panel-footer">
-      {{x.created_at}}
-    </div>
-  </div>
-</div>
-
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-  <h2> Tweets from LaughingSquid </h2>
-  <div class="panel panel-default" ng-repeat="x in tweets['column2']">
-    <div class="panel-body">
-      <p ng-bind="x.text"> </p>
-    </div>
-    <div class="panel-footer">
-      {{x.created_at}}
-    </div>
-  </div>
-</div>
-
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-  <h2> Tweets from TechCrunch </h2>
-  <div class="panel panel-default" ng-repeat="x in tweets['column3']">
-    <div class="panel-body">
-      <p ng-bind="x.text"> </p>
-    </div>
-    <div class="panel-footer">
-      {{x.created_at}}
+<!-- class="col-lg-4 col-md-4 col-sm-6 col-xs-12"
+ -->
+<div ng-class="{'col-lg-4 col-md-4 col-sm-6 col-xs-12': config.no_of_columns == 3, 'col-lg-6 col-md-6 col-sm-6 col-xs-12': config.no_of_columns == 2, 'col-xs-12': config.no_of_columns == 1}" ng-repeat="number in ['column1','column2','column3']">
+  <h3 class="text-center"> <strong> {{tweets[number][0].user.screen_name }}</strong> </h3>
+  <div class="panel panel-default" ng-repeat="x in tweets[number]">
+   <div class="panel-body">
+      <a href="https://twitter.com/{{x.user.name
+      }}" target="_blank">
+        <img ng-src="{{x.user.profile_image_url}}" height="42" width="42">
+      </a>
+      <a href="https://twitter.com/{{x.user.name
+      }}" target="_blank">
+        <span class="user-title">
+        <strong> {{x.user.name}}</strong>
+        </span>
+      </a>
+      <a href="https://twitter.com/{{x.user.name
+      }}" target="_blank">
+        <span class="username"> @{{x.user.name}}</span>
+      </a>
+      <p ng-bind-html="createHyperLinks(x.text)" class="tweet-content" > </p><br>
+      <span>
+      <b> Tweet URL: </b>
+      <a ng-href="{{getTweetURL(x.user.screen_name, x.id_str)}}" target="_blank">{{ getTweetURL(x.user.screen_name, x.id_str) }}</a>
+      </span> <br>
+      <span> <b> Date: </b>
+        {{getWellFormattedTweetDate(x.created_at)}}
+      </span>
     </div>
   </div>
 </div>
