@@ -2,9 +2,8 @@
   "name": "tweet-explorer",
   "private": true,
   "dependencies": {
-    "angular": "~1.5.7",
-    "bootstrap": "~3.3.6",
-    "fontawesome": "~4.6.3",
-    "angular-route":"~1.4.4"
+    "angular": "~1.4.12",
+    "angular-route":"~1.4.4",
+    "bootstrap": "~3.3.6"
   }
 }
