@@ -2,10 +2,17 @@
   "name": "appdirect-challenge",
   "dependencies": {
     "twitter-proxy": "^2.0.0",
-    "http-server": "^0.9.0"
+    "http-server": "^0.9.0",
+    "bower": "1.6.5"
+
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bower install"
+
+  },
+  "engines": {
+    "node": "6.3.1"
   }
 }
 
