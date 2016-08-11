@@ -13,18 +13,24 @@
     color: black;
 }
 .tweet-content {
-    margin-left:50px;
+    margin-left: 50px;
 }
 .blue-background {
-    background-color:#03a9f4;
+    background-color: #03a9f4;
 }
-
+.tweet-image {
+    width: calc(100% - 50px);
+    height: 100%;
+    margin-left: 50px;
+}
 
 /* settings page */
 #settings-container {
     margin-left: 1%;
     margin-right: 1%;
-
-
-
+}
+@media (max-width: 768px) {
+  #layout-settings-row {
+    display: none;
+  }
 }

@@ -28,7 +28,8 @@ app.run(function($location){
         column1_tweet_count:30,
         column2_tweet_count:30,
         column3_tweet_count:30,
-        no_of_columns:3
+        no_of_columns:3,
+        display_photo:"Yes"
     };
     localStorage.setItem("config", JSON.stringify(config));
     $location.path("/tweets");

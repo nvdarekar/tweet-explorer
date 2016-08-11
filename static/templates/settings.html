@@ -1,12 +1,22 @@
 <div id="settings-container">
     <form method="post" ng-submit="saveSettings()">
       <form role="form" id="settings-form" name="settingsForm" class="form-horizontal" ng-submit="saveSettings()">
-    <div class="row">
+    <div class="row" id="layout-settings-row">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <div class="form-group">
-                 <h3><label for="col1-user-name">Layout (No of Columns): </label> </h3>
-                <select id="col1-user-name" name="col1-user-name" class="form-control" ng-model="settings.no_of_columns"
+                 <h3><label for="layout-select">Layout (No of Columns): </label> </h3>
+                <select id="layout-select" name="layout-select" class="form-control" ng-model="settings.no_of_columns"
                 ng-options="count for count in [1, 2, 3]">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="layout-settings-row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="form-group">
+                 <h3><label for="photo-settings">Show Photo (if Available in Content) </label> </h3>
+                <select id="photo-settings" name="photo-settings" class="form-control" ng-model="settings.display_photo"
+                ng-options="option for option in ['Yes', 'No']">
                 </select>
             </div>
         </div>

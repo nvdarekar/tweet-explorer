@@ -6,7 +6,7 @@
     "angular-route":"~1.4.4",
     "angular-sanitize":"~1.4.12",
     "bootstrap": "~3.3.6",
-    "moment":"~2.14.1"
+    "moment":"~2.14.1",
     "moment-twitter":"~0.2.0"
   }
 }

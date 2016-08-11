@@ -24,6 +24,10 @@
       </a>
 
       <p ng-bind-html="createHyperLinks(x.text)" class="tweet-content" > </p><br>
+      <div class="photo" ng-if="config.display_photo == 'Yes' && hasMedia(x)">
+        <a href="{{getMediaURL(x)}}" target="_blank">
+        <img class="tweet-image" ng-src="{{getMediaURL(x)}}"/></a>
+      </div>
       <span>
       <b> Tweet URL: </b>
       <a ng-href="{{getTweetURL(x.user.screen_name, x.id_str)}}" target="_blank">{{ getTweetURL(x.user.screen_name, x.id_str) }}</a>

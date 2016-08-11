@@ -22,9 +22,9 @@ app.controller("TweetDashboardController",
             return "https://twitter.com/" + screen_name + "/status/" + id_str
         }
         $scope.getWellFormattedTweetDate = function(dateString, utcOffest) {
-            return moment(dateString).local().format('MMMM Do YYYY, h:mm:ss a');        }
+            return moment(new Date(dateString)).local().format('MMMM Do YYYY, h:mm:ss a');        }
         $scope.getRelativeTimeFromDate = function(dateString) {
-            return moment(dateString).twitterShort();
+            return moment(new Date(dateString)).twitterShort();
         }
         $scope.createHyperLinks = function(content) {
             var userMentionPattern = /@([A-Za-z0-9_-]+)/ig;
@@ -35,4 +35,14 @@ app.controller("TweetDashboardController",
             content = content.replace(hashTagPattern,'<a href="http://twitter.com/hashtag/$1" target="_blank">#$1</a>' )
             return $sce.trustAsHtml(content);
         }
+        $scope.hasMedia = function(x){
+            if(x.extended_entities === undefined) {
+                return false;
+            }
+            return x.extended_entities.media.length > 0 && x.extended_entities.media[0].type === 'photo';
+        }
+        $scope.getMediaURL = function(x){
+            return x.extended_entities.media[0].media_url
+        }
+
 });
