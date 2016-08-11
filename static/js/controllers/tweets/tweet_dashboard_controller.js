@@ -31,8 +31,8 @@ app.controller("TweetDashboardController",
             var hashTagPattern = /#([A-Za-z0-9_-]+)/ig;
             var urlPattern = /(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-](?!\u2026))/g;
             content =content.replace(urlPattern, '<a href="$&" target="_blank">$&</a>');
-            content = content.replace(userMentionPattern, '<a href="http://twitter.com/$1" target="_blank">@$1</a>');
-            content = content.replace(hashTagPattern,'<a href="http://twitter.com/hashtag/$1" target="_blank">#$1</a>' )
+            content = content.replace(userMentionPattern, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
+            content = content.replace(hashTagPattern,'<a href="https://twitter.com/hashtag/$1" target="_blank">#$1</a>' )
             return $sce.trustAsHtml(content);
         }
         $scope.hasMedia = function(x){
