@@ -4,11 +4,11 @@ var app = angular.module("TweetExplorerApp", ["ngRoute", "ngSanitize"]);
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when("/tweets", {
-            templateUrl : "/static/templates/tweet_dashboard.html",
+            templateUrl : "/templates/tweet_dashboard.html",
             controller  : "TweetDashboardController"
         })
         .when("/settings", {
-            templateUrl : "/static/templates/settings.html",
+            templateUrl : "/templates/settings.html",
             controller  : "SettingsController"
         })
         .otherwise({
