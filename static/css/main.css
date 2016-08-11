@@ -1,7 +1,20 @@
-.panel {
-    word-wrap: break-word;
+/** index.html **/
+.white-color {
+    color: white !important;
 }
-.panel-footer {
+/*/** Tweet Dashboard **/
+.tweet-account-header {
+    margin-top: 55px;
+}
+.tweet-feed-column hr {
+    margin-top: 0px;
+}
+
+.tweet-feed-column .panel {
+    word-wrap: break-word;
+    border: none;
+}
+.tweet-feed-column .panel-footer {
     background-color: white;
     border-top:none;
 }
@@ -11,9 +24,15 @@
 }
 .user-title{
     color: black;
+    margin-left: 5px;
+}
+.profile-image {
+    vertical-align: top;
 }
 .tweet-content {
+    font-size: 18px;
     margin-left: 50px;
+    margin-top: -20px;
 }
 .blue-background {
     background-color: #03a9f4;
@@ -22,12 +41,14 @@
     width: calc(100% - 50px);
     height: 100%;
     margin-left: 50px;
+    margin-top:-50px;
 }
 
 /* settings page */
 #settings-container {
     margin-left: 1%;
     margin-right: 1%;
+    margin-top: 55px;
 }
 @media (max-width: 768px) {
   #layout-settings-row {
