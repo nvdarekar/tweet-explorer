@@ -1,69 +1,68 @@
-<form method="post" ng-submit="saveSettings()">
-  <form role="form" id="settings-form" name="settingsForm" class="form-horizontal" ng-submit="saveSettings()">
-<div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <div class="form-group">
-             <h3><label for="col1-user-name">Layout (No of Columns): </label> </h3>
-            <select id="col1-user-name" name="col1-user-name" class="form-control" ng-model="settings.no_of_columns"
-            ng-options="count for count in [1, 2, 3]">
-            </select>
+<div id="settings-container">
+    <form method="post" ng-submit="saveSettings()">
+      <form role="form" id="settings-form" name="settingsForm" class="form-horizontal" ng-submit="saveSettings()">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="form-group">
+                 <h3><label for="col1-user-name">Layout (No of Columns): </label> </h3>
+                <select id="col1-user-name" name="col1-user-name" class="form-control" ng-model="settings.no_of_columns"
+                ng-options="count for count in [1, 2, 3]">
+                </select>
+            </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <h3> <label> Feed 1 Settings: </label> </h3>
+            <div class="form-group">
+                <label for="col1-user-name">User Name </label>
+                <select id="col1-user-name" name="col1-user-name" class="form-control" ng-model="settings.column1_name"
+                ng-options="userName for userName in userNameOptions">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="col1-tweet-count">No of Tweets</label>
+                <select id="col1-tweet-count" name="col1-tweet-count" class="form-control" ng-model="settings.column1_tweet_count"
+                ng-options="count for count in tweetCountsOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <h3> <label>  Feed 2 Settings: </label> </h3>
+            <div class="form-group">
+                <label for="col2-user-name">User Name </label>
+                <select id="col2-user-name" name="col2-user-name" class="form-control" ng-model="settings.column2_name"
+                ng-options="userName for userName in userNameOptions">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="col2-tweet-count">No of Tweets </label>
+                <select id="col2-tweet-count" name="col2-tweet-count" class="form-control" ng-model="settings.column2_tweet_count"
+                ng-options="count for count in tweetCountsOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <h3><label>  Feed 3 Settings: </label></h3>
+            <div class="form-group">
+                <label for="col3-user-name">User Name </label>
+                <select id="col3-user-name" name="col3-user-name" class="form-control" ng-model="settings.column3_name"
+                ng-options="userName for userName in userNameOptions">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="col3-tweet-count">No of Tweets </label>
+                <select id="col3-tweet-count" name="col3-tweet-count" class="form-control" ng-model="settings.column3_tweet_count"
+                ng-options="count for count in tweetCountsOptions">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <input type="submit" class="btn btn-default btn-primary btn-lg" value="Save"/>
+            <input type="button" class="btn btn-default btn-primary btn-lg" value="Cancel" ng-click="resetSettings()"/>
+        </div>
+    </div>
+    </form>
 </div>
-<div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-      <h3> <label> Feed 1 Settings: </label> </h3>
-        <div class="form-group">
-            <label for="col1-user-name">User Name </label>
-            <select id="col1-user-name" name="col1-user-name" class="form-control" ng-model="settings.column1_name"
-            ng-options="userName for userName in userNameOptions">
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="col1-tweet-count">No of Tweets</label>
-            <select id="col1-tweet-count" name="col1-tweet-count" class="form-control" ng-model="settings.column1_tweet_count"
-            ng-options="count for count in tweetCountsOptions">
-            </select>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-      <h3> <label>  Feed 2 Settings: </label> </h3>
-        <div class="form-group">
-            <label for="col2-user-name">User Name </label>
-            <select id="col2-user-name" name="col2-user-name" class="form-control" ng-model="settings.column2_name"
-            ng-options="userName for userName in userNameOptions">
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="col2-tweet-count">No of Tweets </label>
-            <select id="col2-tweet-count" name="col2-tweet-count" class="form-control" ng-model="settings.column2_tweet_count"
-            ng-options="count for count in tweetCountsOptions">
-            </select>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-      <h3><label>  Feed 3 Settings: </label></h3>
-        <div class="form-group">
-            <label for="col3-user-name">User Name </label>
-            <select id="col3-user-name" name="col3-user-name" class="form-control" ng-model="settings.column3_name"
-            ng-options="userName for userName in userNameOptions">
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="col3-tweet-count">No of Tweets </label>
-            <select id="col3-tweet-count" name="col3-tweet-count" class="form-control" ng-model="settings.column3_tweet_count"
-            ng-options="count for count in tweetCountsOptions">
-            </select>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12 text-center">
-        <input type="submit" class="btn btn-default btn-primary btn-lg" value="Save"/>
-        <input type="button" class="btn btn-default btn-primary btn-lg" value="Cancel" ng-click="resetSettings()"/>
-    </div>
-</div>
-</form>
-<style>
-
-</style>

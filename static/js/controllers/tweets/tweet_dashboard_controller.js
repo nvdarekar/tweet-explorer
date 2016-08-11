@@ -21,17 +21,18 @@ app.controller("TweetDashboardController",
         $scope.getTweetURL = function(screen_name, id_str){
             return "https://twitter.com/" + screen_name + "/status/" + id_str
         }
-        $scope.getWellFormattedTweetDate = function(dateString) {
-            var d = new Date(Date.parse(dateString));
-            return d.toDateString() +' : ' +d.toTimeString()
+        $scope.getWellFormattedTweetDate = function(dateString, utcOffest) {
+            return moment(dateString).local().format('MMMM Do YYYY, h:mm:ss a');        }
+        $scope.getRelativeTimeFromDate = function(dateString) {
+            return moment(dateString).twitterShort();
         }
         $scope.createHyperLinks = function(content) {
-            var userMentionPattern = /@([A-Za-z0-9_-]+)/ig; ///\@(\w){1,15}/g;
-            var hashTagPattern = /#([A-Za-z0-9_-]+)/ig; ///\@(\w){1,15}/g;
+            var userMentionPattern = /@([A-Za-z0-9_-]+)/ig;
+            var hashTagPattern = /#([A-Za-z0-9_-]+)/ig;
             var urlPattern = /(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-](?!\u2026))/g;
             content =content.replace(urlPattern, '<a href="$&" target="_blank">$&</a>');
-            content = content.replace(userMentionPattern, '<a href="http://twitter.com/$1">@$1</a>');
-            content = content.replace(hashTagPattern,'<a href="http://twitter.com/hashtag/$1">#$1</a>' )
+            content = content.replace(userMentionPattern, '<a href="http://twitter.com/$1" target="_blank">@$1</a>');
+            content = content.replace(hashTagPattern,'<a href="http://twitter.com/hashtag/$1" target="_blank">#$1</a>' )
             return $sce.trustAsHtml(content);
         }
 });

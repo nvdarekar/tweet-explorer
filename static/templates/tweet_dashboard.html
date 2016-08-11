@@ -1,7 +1,8 @@
-<!-- class="col-lg-4 col-md-4 col-sm-6 col-xs-12"
- -->
 <div ng-class="{'col-lg-4 col-md-4 col-sm-6 col-xs-12': config.no_of_columns == 3, 'col-lg-6 col-md-6 col-sm-6 col-xs-12': config.no_of_columns == 2, 'col-xs-12': config.no_of_columns == 1}" ng-repeat="number in ['column1','column2','column3']">
+  <a href="https://twitter.com/{{x.user.name
+      }}" target="_blank">
   <h3 class="text-center"> <strong> {{tweets[number][0].user.screen_name }}</strong> </h3>
+  </a>
   <div class="panel panel-default" ng-repeat="x in tweets[number]">
    <div class="panel-body">
       <a href="https://twitter.com/{{x.user.name
@@ -18,13 +19,17 @@
       }}" target="_blank">
         <span class="username"> @{{x.user.name}}</span>
       </a>
+      <a ng-href="{{getTweetURL(x.user.screen_name, x.id_str)}}" target="_blank">
+        <span class="username">.{{getRelativeTimeFromDate(x.created_at)}}</span>
+      </a>
+
       <p ng-bind-html="createHyperLinks(x.text)" class="tweet-content" > </p><br>
       <span>
       <b> Tweet URL: </b>
       <a ng-href="{{getTweetURL(x.user.screen_name, x.id_str)}}" target="_blank">{{ getTweetURL(x.user.screen_name, x.id_str) }}</a>
       </span> <br>
       <span> <b> Date: </b>
-        {{getWellFormattedTweetDate(x.created_at)}}
+        {{getWellFormattedTweetDate(x.created_at, x.user.utc_offset)}}
       </span>
     </div>
   </div>
